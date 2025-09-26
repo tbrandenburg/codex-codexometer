@@ -4,7 +4,9 @@ Codexometer Demo is a set of three parallel prototype dashboards that monitor se
 
 **🎥 Watch the Tutorial** ► [Codex Built 3 Apps In Parallel... While I Drank Coffee (Codex CLI, IDE, Web)](youtube.com/watch?v=PkJoZJ6aC98)
 
-**🧰 Get the Builder Pack** ► [Click Here](https://rebrand.ly/dc0eb5)
+**🧰 Get the Builder Pack** ► [Codex Builder Pack](https://rebrand.ly/dc0eb5)
+
+**🎯Join the Insiders Club** ► [Join for FREE](https://insiders.aioriented.dev)
 
 ---
 
