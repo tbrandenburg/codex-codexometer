@@ -24,7 +24,7 @@ Keep these documents close while iterating; they capture the agreed product scop
 > Tip: Each variant ships with mock data and supporting assets so you can evaluate UX trade-offs quickly. Start from `main` for documentation, then move to the branch that matches your access level.
 
 ## 🚀 Insiders Club & Builder Pack
-Unlock the full bundle to get every Codex-generated variant along with premium assets:
+Join the [Insiders Club](https://insiders.aioriented.dev) to inlock the full bundle to get every Codex-generated variant along with premium assets:
 - 🔐 Private GitHub access to `attempt-version-1` and `attempt-version-2`, including ongoing improvements.
 - 🧠 Downloadable PRD prompts, Codex Cloud task logs, and high-resolution design exports.
 - 📅 Early previews of future Codex workflow tutorials, plus members-only Q&A sessions.
