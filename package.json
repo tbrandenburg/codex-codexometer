@@ -1,0 +1,31 @@
+{
+  "name": "codex-codexometer",
+  "version": "1.0.0",
+  "description": "Codex Sentiment Monitor dashboard prototype for tracking Reddit sentiment about Codex CLI/IDE.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "echo 'No lint configured'"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.7",
+    "clsx": "^2.1.1",
+    "d3-scale": "^4.0.2",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^5.3.0",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/d3-scale": "^4.0.6",
+    "@types/react": "^18.3.10",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.7"
+  }
+}
