@@ -84,9 +84,10 @@ export const SentimentVolumeChart: React.FC<SentimentVolumeChartProps> = ({
           </p>
         </div>
       </div>
-      <Chart
-        type="bar"
-        options={{
+      <div className="relative h-[380px]">
+        <Chart
+          type="bar"
+          options={{
           responsive: true,
           maintainAspectRatio: false,
           plugins: {
@@ -148,10 +149,11 @@ export const SentimentVolumeChart: React.FC<SentimentVolumeChartProps> = ({
               onSelectDate(date);
             }
           }
-        }}
-        data={data}
-        height={380}
-      />
+          }}
+          data={data}
+          style={{ height: "100%" }}
+        />
+      </div>
     </div>
   );
 };
