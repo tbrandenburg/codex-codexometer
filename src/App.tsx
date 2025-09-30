@@ -43,25 +43,25 @@ const App: React.FC = () => {
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
           <div className="space-y-4 max-w-2xl">
             <span className="badge">Codex Sentiment Monitor</span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-emerald-50 leading-tight">
               Track how the Codex community feels across Reddit—in one glance.
             </h1>
-            <p className="text-lg text-white/70">
+            <p className="text-lg text-brand-100/80">
               Pulling daily sentiment from r/ChatGPT, r/OpenAI, r/ChatGPTPro, and r/codex with automated cleaning, spam
               filtering, and HuggingFace-powered scoring. Use the dashboard to spot swings, decode why they happened, and export
               evidence for your launch notes.
             </p>
-            <div className="flex flex-wrap items-center gap-3 text-sm text-white/70">
-              <span className="inline-flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-emerald-400"></span> 30m ingest cadence</span>
-              <span className="inline-flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-sky-400"></span> DistilRoBERTa sentiment</span>
-              <span className="inline-flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-violet-400"></span> Supabase aggregates</span>
+            <div className="flex flex-wrap items-center gap-3 text-sm text-brand-100/80">
+              <span className="inline-flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-brand-400"></span> 30m ingest cadence</span>
+              <span className="inline-flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-lime-400"></span> DistilRoBERTa sentiment</span>
+              <span className="inline-flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-emerald-500"></span> Supabase aggregates</span>
             </div>
           </div>
-          <div className="flex flex-col gap-4 text-sm text-white/70 max-w-sm">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
-              <p className="uppercase text-xs text-white/50 tracking-[0.3em]">Latest spike</p>
-              <h3 className="text-lg font-semibold text-white mt-2">{latestMetric?.date ?? "—"}</h3>
-              <p className="mt-2">
+          <div className="flex flex-col gap-4 text-sm text-brand-100/70 max-w-sm">
+            <div className="bg-brand-400/10 border border-brand-400/20 rounded-2xl p-4">
+              <p className="uppercase text-xs text-brand-100/60 tracking-[0.3em]">Latest spike</p>
+              <h3 className="text-lg font-semibold text-emerald-50 mt-2">{latestMetric?.date ?? "—"}</h3>
+              <p className="mt-2 text-brand-100/80">
                 Confidence-weighted sentiment at {latestMetric ? Math.round(latestMetric.avgSentiment * 100) : 0}% with
                 {" "}
                 {latestMetric ? latestMetric.totalItems.toLocaleString() : "0"} mentions.
@@ -92,29 +92,29 @@ const App: React.FC = () => {
 
       <section id="methodology" className="glass-panel p-6 sm:p-10 space-y-6">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-white/50">Transparency</p>
-          <h2 className="text-2xl font-semibold text-white">How the pipeline works</h2>
+          <p className="text-xs uppercase tracking-[0.3em] text-brand-100/60">Transparency</p>
+          <h2 className="text-2xl font-semibold text-emerald-50">How the pipeline works</h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-6 text-sm text-white/70">
-          <div className="bg-white/5 rounded-2xl border border-white/10 p-4 space-y-2">
-            <h3 className="text-lg font-semibold text-white">Ingestion</h3>
-            <ul className="space-y-2 list-disc list-inside">
+        <div className="grid md:grid-cols-3 gap-6 text-sm text-brand-100/80">
+          <div className="bg-brand-400/10 rounded-2xl border border-brand-400/20 p-4 space-y-2">
+            <h3 className="text-lg font-semibold text-emerald-50">Ingestion</h3>
+            <ul className="space-y-2 list-disc list-inside text-brand-100/80">
               <li>Supabase Edge Function polls each subreddit every 30 minutes using OAuth.</li>
               <li>Backfills 90 days on cold starts with rate-limit-aware pagination.</li>
               <li>Stores raw payloads for reproducibility.</li>
             </ul>
           </div>
-          <div className="bg-white/5 rounded-2xl border border-white/10 p-4 space-y-2">
-            <h3 className="text-lg font-semibold text-white">Cleaning & scoring</h3>
-            <ul className="space-y-2 list-disc list-inside">
+          <div className="bg-brand-400/10 rounded-2xl border border-brand-400/20 p-4 space-y-2">
+            <h3 className="text-lg font-semibold text-emerald-50">Cleaning & scoring</h3>
+            <ul className="space-y-2 list-disc list-inside text-brand-100/80">
               <li>Markdown stripped, language filtered, bots down-weighted via karma heuristics.</li>
               <li>Sentiment scored through HuggingFace DistilRoBERTa with confidence thresholds.</li>
               <li>Late arrivals captured via nightly re-aggregation.</li>
             </ul>
           </div>
-          <div className="bg-white/5 rounded-2xl border border-white/10 p-4 space-y-2">
-            <h3 className="text-lg font-semibold text-white">Serving</h3>
-            <ul className="space-y-2 list-disc list-inside">
+          <div className="bg-brand-400/10 rounded-2xl border border-brand-400/20 p-4 space-y-2">
+            <h3 className="text-lg font-semibold text-emerald-50">Serving</h3>
+            <ul className="space-y-2 list-disc list-inside text-brand-100/80">
               <li>Daily metrics served from Supabase materialized views.</li>
               <li>Next.js (simulated here) caches responses for fast loads.</li>
               <li>CSV export streams weighted aggregates for offline review.</li>
@@ -126,26 +126,26 @@ const App: React.FC = () => {
       <section id="quality" className="glass-panel p-6 sm:p-10 space-y-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-white/50">QA Loop</p>
-            <h2 className="text-2xl font-semibold text-white">Human-in-the-loop review</h2>
+            <p className="text-xs uppercase tracking-[0.3em] text-brand-100/60">QA Loop</p>
+            <h2 className="text-2xl font-semibold text-emerald-50">Human-in-the-loop review</h2>
           </div>
-          <div className="flex items-center gap-3 text-sm text-white/70">
+          <div className="flex items-center gap-3 text-sm text-brand-100/80">
             <span className="badge">Weekly 200 sample audit</span>
             <span className="badge">Model drift tracker</span>
           </div>
         </div>
-        <div className="grid md:grid-cols-2 gap-6 text-sm text-white/70">
-          <div className="bg-white/5 rounded-2xl border border-white/10 p-4 space-y-2">
-            <h3 className="text-lg font-semibold text-white">Accuracy checks</h3>
-            <ul className="space-y-2 list-disc list-inside">
+        <div className="grid md:grid-cols-2 gap-6 text-sm text-brand-100/80">
+          <div className="bg-brand-400/10 rounded-2xl border border-brand-400/20 p-4 space-y-2">
+            <h3 className="text-lg font-semibold text-emerald-50">Accuracy checks</h3>
+            <ul className="space-y-2 list-disc list-inside text-brand-100/80">
               <li>Analysts review low-confidence items and recalibrate thresholds.</li>
               <li>Precision/recall tracked vs. labeled validation set.</li>
               <li>Escalations logged if sentiment deviates &gt;10 pts from manual labels.</li>
             </ul>
           </div>
-          <div className="bg-white/5 rounded-2xl border border-white/10 p-4 space-y-2">
-            <h3 className="text-lg font-semibold text-white">Reliability signals</h3>
-            <ul className="space-y-2 list-disc list-inside">
+          <div className="bg-brand-400/10 rounded-2xl border border-brand-400/20 p-4 space-y-2">
+            <h3 className="text-lg font-semibold text-emerald-50">Reliability signals</h3>
+            <ul className="space-y-2 list-disc list-inside text-brand-100/80">
               <li>Pipeline health banner surfaces delays & links to Supabase logs.</li>
               <li>Data freshness warnings appear if no updates in 6 hours.</li>
               <li>Exports stamped with model version + refresh time.</li>
@@ -154,7 +154,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      <footer className="pb-10 text-xs text-white/50 text-center">
+      <footer className="pb-10 text-xs text-brand-100/60 text-center">
         Built with love for the Codex team · Mock data for demo purposes · {new Date().getFullYear()}
       </footer>
     </main>

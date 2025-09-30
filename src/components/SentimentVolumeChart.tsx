@@ -45,8 +45,8 @@ export const SentimentVolumeChart: React.FC<SentimentVolumeChartProps> = ({
         type: "line" as const,
         label: "Avg Sentiment",
         data: metrics.map((metric) => metric.avgSentiment * 100),
-        borderColor: "#5c8aff",
-        backgroundColor: "rgba(95, 118, 255, 0.24)",
+        borderColor: "#22c55e",
+        backgroundColor: "rgba(34, 197, 94, 0.24)",
         borderWidth: 2,
         tension: 0.35,
         fill: true,
@@ -59,7 +59,7 @@ export const SentimentVolumeChart: React.FC<SentimentVolumeChartProps> = ({
         label: "Volume",
         data: metrics.map((metric) => metric.totalItems),
         backgroundColor: labels.map((date) =>
-          date === selectedDate ? "rgba(255,255,255,0.7)" : "rgba(41, 100, 255, 0.35)"
+          date === selectedDate ? "rgba(236, 253, 245, 0.8)" : "rgba(34, 197, 94, 0.35)"
         ),
         borderRadius: 6,
         yAxisID: "y"
@@ -71,14 +71,14 @@ export const SentimentVolumeChart: React.FC<SentimentVolumeChartProps> = ({
     <div className="glass-panel p-4 sm:p-6">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-white/50">Trendlines</p>
-          <h2 className="text-xl font-semibold text-white">Sentiment × Volume</h2>
-          <p className="text-sm text-white/60">
+          <p className="text-xs uppercase tracking-[0.3em] text-brand-100/60">Trendlines</p>
+          <h2 className="text-xl font-semibold text-emerald-50">Sentiment × Volume</h2>
+          <p className="text-sm text-brand-100/80">
             Hover to explore daily sentiment averages (0-100) and stacked discussion volume. Click any bar to drill into the
             narratives for that day.
           </p>
         </div>
-        <div className="text-sm text-white/60">
+        <div className="text-sm text-brand-100/80">
           <p>
             <span className="badge">Updated nightly</span>
           </p>
@@ -92,7 +92,7 @@ export const SentimentVolumeChart: React.FC<SentimentVolumeChartProps> = ({
           plugins: {
             legend: {
               labels: {
-                color: "#cbd5f5"
+                color: "#bbf7d0"
               }
             },
             tooltip: {
@@ -110,10 +110,10 @@ export const SentimentVolumeChart: React.FC<SentimentVolumeChartProps> = ({
             y: {
               beginAtZero: true,
               ticks: {
-                color: "#94a3d6"
+                color: "#86efac"
               },
               grid: {
-                color: "rgba(148, 163, 214, 0.12)"
+                color: "rgba(134, 239, 172, 0.15)"
               }
             },
             y1: {
@@ -122,7 +122,7 @@ export const SentimentVolumeChart: React.FC<SentimentVolumeChartProps> = ({
               min: 0,
               max: 100,
               ticks: {
-                color: "#94a3d6",
+                color: "#86efac",
                 callback: (value) => `${value}%`
               },
               grid: {
@@ -131,7 +131,7 @@ export const SentimentVolumeChart: React.FC<SentimentVolumeChartProps> = ({
             },
             x: {
               ticks: {
-                color: "#94a3d6",
+                color: "#86efac",
                 maxTicksLimit: 10
               },
               grid: {

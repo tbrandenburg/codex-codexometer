@@ -13,10 +13,10 @@ export const SubredditTabs: React.FC<SubredditTabsProps> = ({ value, onChange })
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between flex-wrap gap-3">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-white/50">Communities</p>
-            <h2 className="text-xl font-semibold text-white">Where Codex is being discussed</h2>
+            <p className="text-xs uppercase tracking-[0.3em] text-brand-100/60">Communities</p>
+            <h2 className="text-xl font-semibold text-emerald-50">Where Codex is being discussed</h2>
           </div>
-          <div className="flex items-center gap-2 bg-white/5 rounded-full p-1">
+          <div className="flex items-center gap-2 bg-brand-400/10 rounded-full p-1 border border-brand-400/20">
             {SUBREDDITS.map((subreddit) => (
               <button
                 key={subreddit}
@@ -25,7 +25,7 @@ export const SubredditTabs: React.FC<SubredditTabsProps> = ({ value, onChange })
                   "tab-trigger",
                   value === subreddit
                     ? "tab-trigger-active"
-                    : "text-white/70 hover:bg-white/10"
+                    : "text-brand-100/70 hover:bg-brand-400/10 hover:text-brand-50"
                 )}
               >
                 {subreddit}
@@ -33,7 +33,7 @@ export const SubredditTabs: React.FC<SubredditTabsProps> = ({ value, onChange })
             ))}
           </div>
         </div>
-        <p className="text-sm text-white/60">
+        <p className="text-sm text-brand-100/80">
           Each tab recalculates averages, keyword clusters, and recent stand-out examples for that community only.
         </p>
       </div>

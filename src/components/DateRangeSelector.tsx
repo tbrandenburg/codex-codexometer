@@ -18,9 +18,9 @@ export const DateRangeSelector: React.FC<DateRangeSelectorProps> = ({ value, onC
   return (
     <div className="glass-panel p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
       <div>
-        <p className="text-xs uppercase tracking-[0.35em] text-white/50">Time Horizon</p>
-        <h2 className="text-xl font-semibold text-white">Last {value} days</h2>
-        <p className="text-sm text-white/60">
+        <p className="text-xs uppercase tracking-[0.35em] text-brand-100/60">Time Horizon</p>
+        <h2 className="text-xl font-semibold text-emerald-50">Last {value} days</h2>
+        <p className="text-sm text-brand-100/80">
           Toggle between recent chatter, the monthly pulse, or a full quarter to correlate with releases.
         </p>
       </div>
@@ -31,12 +31,14 @@ export const DateRangeSelector: React.FC<DateRangeSelectorProps> = ({ value, onC
             onClick={() => onChange(option.value)}
             className={clsx(
               "tab-trigger",
-              value === option.value ? "tab-trigger-active" : "bg-white/5 text-white/70 hover:bg-white/10"
+              value === option.value
+                ? "tab-trigger-active"
+                : "bg-brand-400/5 text-brand-100/70 hover:bg-brand-400/10 hover:text-brand-50"
             )}
           >
             <div className="flex flex-col items-center leading-tight">
               <span>{option.label}</span>
-              <span className="text-[10px] uppercase tracking-wide text-white/50">{option.description}</span>
+              <span className="text-[10px] uppercase tracking-wide text-brand-100/60">{option.description}</span>
             </div>
           </button>
         ))}
