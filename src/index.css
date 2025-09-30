@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background: radial-gradient(circle at top left, rgba(95, 118, 255, 0.18), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(16, 31, 70, 0.8), rgba(8, 12, 24, 0.95));
+  min-height: 100vh;
+}
+
+.glass-panel {
+  @apply bg-slate-900/60 border border-white/10 backdrop-blur-xl rounded-3xl shadow-glass;
+}
+
+.badge {
+  @apply inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white/80;
+}
+
+.card-title {
+  @apply text-lg font-semibold text-white;
+}
+
+.metric-value {
+  @apply text-3xl font-bold text-white;
+}
+
+.metric-label {
+  @apply text-sm uppercase tracking-wide text-white/60;
+}
+
+.tab-trigger {
+  @apply rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ease-out;
+}
+
+.tab-trigger-active {
+  @apply bg-white text-slate-900 shadow-lg;
+}
+
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
